@@ -169,9 +169,3 @@ select b.book_id,b.title, b.stock,coalesce(sum(o.quantity),0) as order_quantity,
 from Orders o left join Books b
 on o.book_id=b.book_id
 group by b.book_id order by b.book_id;
-
-   /*   wrong sol_n
-   select b.stock,o.quantity,b.stock-o.quantity as remening
-   from Orders o join Books b
-   on o.book_id=b.book_id
-   */
